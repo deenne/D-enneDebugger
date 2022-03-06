@@ -94,7 +94,6 @@ La barre de débuggage vous permet d'afficher des logs et des variables dans une
 * (string) $log :
 *       Correspond au log à ajouter
 */
-
 $dd->addDebugLog($log);
 ~~~
 
@@ -112,14 +111,18 @@ $dd->addDebugLog($log);
 *       Options disponibles :
 *           Similaire à dump()
 */
-
 $dd->addDebugVar($var, $varName, $style);
 ~~~
 
 #### Affichage de la barre de débug:
 Fonction à exécuter juste avant la fermeture de la balise *body* de votre fichier
 ~~~
-$dd->debugBarre();
+/*
+* (bool) [OPTIONNEL] $showServerAndSession :
+*       Par défaut à true
+*       Si mis à false la fonction n'affichera pas le contenu des variables SESSION ni des variables SERVER
+*/
+$dd->debugBarre($showServerAndSession);
 ~~~
 
 -----
