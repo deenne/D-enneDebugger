@@ -125,4 +125,4 @@ $dd->debugBarre();
 -----
 
 ## Démo:
-(Démonstration de la Class)[https://deenne.fr]
+[Démonstration de la Class](https://deenne.fr)
