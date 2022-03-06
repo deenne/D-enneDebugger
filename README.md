@@ -32,8 +32,9 @@ L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonc
 *       Si mis à true le contenu par défaut renvoyé dans un echo sera renvoyé avec un return
 */
 $dd->dump($variableAAfficher, $style, $return);
+~~~
 
-
+~~~
 /*
 * AFFICHAGE DE LA VARIABLE & ARRÊT DU SCRIPT
 * $variableAAfficher :
