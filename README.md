@@ -125,4 +125,4 @@ $dd->debugBarre();
 -----
 
 ## Démo:
-[Démonstration de la Class](https://deenne.fr)
+[Démonstration de la Class](https://noka.deenne.fr/gal/index.php?path=MnZTZEVGQkpoWm9lbFhoV0NkUG04eU4vNmlZTGY0WFFoUkdoWkcrK0oraG1YcGl3MzVabnV1Y1p1cHcrUk96ag%3D%3D&password=VFowSStvV0RmV3VWYjJmVHd4ZEo5Z3lEV2hTVUxIMDZCekZaR1pYUHhlNml2by9sbzl3NkJJNGlkMUNGdlZRcg%3D%3D)
