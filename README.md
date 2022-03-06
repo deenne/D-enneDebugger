@@ -20,14 +20,14 @@ L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonc
 * AFFICHAGE DE LA VARIABLE
 * $variableAAfficher :
 *       Correspond à la variable à afficher
-* (string) $style :
+* (string) [OPTIONNEL] $style :
 *       Correspond au style d'affichage de la variable.
 *       Options disponibles :
 *       - INFO (fond bleu)
 *       - VALID (fond vert)
 *       - ALERT (fond jaune)
 *       - ERROR (fond rouge)
-* (bool) $return :
+* (bool) [OPTIONNEL] $return :
 *       Par défaut à false
 *       Si mis à true le contenu par défaut renvoyé dans un echo sera renvoyé avec un return
 */
@@ -38,7 +38,7 @@ $dd->dump($variableAAfficher, $style, $return);
 * AFFICHAGE DE LA VARIABLE & ARRÊT DU SCRIPT
 * $variableAAfficher :
 *       Correspond à la variable à afficher
-* (string) $style :
+* (string) [OPTIONNEL] $style :
 *       Correspond au style d'affichage de la variable.
 *       Options disponibles :
 *       - INFO (fond bleu)
