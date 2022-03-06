@@ -7,7 +7,9 @@ DéenneDébugger est une class PHP vous permettant de simplifier le débuggage d
 ### Initialisation:
 Pour initialiser la class vous devez ajouter un *require* au début de votre fichier et créer une instance.
 ~~~
-// Chemin à adapter selon votre structure de fichiers
+/*
+* CHEMIN A ADAPTER SELON VOTRE STRUCTURE DE FICHIER
+*/
 require "./DeenneDebugger.php";
 
 $dd = new DeenneDebugger();
@@ -34,7 +36,6 @@ L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonc
 *       Par défaut à false
 *       Si mis à true le contenu par défaut renvoyé dans un echo sera renvoyé avec un return
 */
-
 $dd->dump($variableAAfficher, $style, $return);
 ~~~
 
@@ -50,24 +51,34 @@ $dd->dump($variableAAfficher, $style, $return);
 *       Options disponibles :
 *           Similaire à dump()
 */
-
 $dd->dd($variableAAfficher, $style);
 ~~~
 
 ### Calcul du temps de traitement :
 Le calcul du temps de traitement nécéssite deux fonctions, la première doit être exécutée avant ce dont vous souhaitez obtenir le temps de traitement et la seconde après.
 ~~~
-// Début du script / de la fonction:
+/*
+* DEBUT DU SCRIPT || DE LA FONCTION
+*/
 $dd->startLoad();
 
-// Script ou fonction dont on cherche à obtenir le temps de traitement
-
-// Fin du script / de la fonction:
 /*
-*
+* Script ou fonction dont on cherche à obtenir le temps de traitement
 */
 
-$tempsTraitement = $dd->endLoad();
+/*
+* FIN DU SCRIPT || DE LA FONCTION
+*
+* (bool) [OPTIONNEL] $print :
+*       Par défaut à false
+*       Si mis à true la fonction affiche le temps de traitement au lieu de le retourner
+*
+* (string) [OPTIONNEL] $style :
+*       Correspond au style d'affichage
+*       Options disponibles :
+*           Similaire à dump()
+*/
+$tempsTraitement = $dd->endLoad($print, $style);
 ~~~
 
 ### Barre de débuggage
