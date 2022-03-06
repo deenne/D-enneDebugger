@@ -1,5 +1,6 @@
 # DeenneDebugger
 DéenneDébugger est une class PHP vous permettant de simplifier le débuggage de vos sites en permettant un affichage de variables, l'ajout de logs ainsi qu 'un calcul du temps de traitement de votre script.
+
 -----
 
 ## Usage :
@@ -17,6 +18,8 @@ $dd = new DeenneDebugger();
 
 ### Affichage d'une variable:
 L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonctions.
+
+#### dump():
 ~~~
 /*
 * AFFICHAGE DE LA VARIABLE
@@ -39,6 +42,7 @@ L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonc
 $dd->dump($variableAAfficher, $style, $return);
 ~~~
 
+#### dd():
 ~~~
 /*
 * AFFICHAGE DE LA VARIABLE & ARRÊT DU SCRIPT
@@ -54,7 +58,7 @@ $dd->dump($variableAAfficher, $style, $return);
 $dd->dd($variableAAfficher, $style);
 ~~~
 
-### Calcul du temps de traitement :
+### Calcul du temps de traitement:
 Le calcul du temps de traitement nécéssite deux fonctions, la première doit être exécutée avant ce dont vous souhaitez obtenir le temps de traitement et la seconde après.
 ~~~
 /*
@@ -81,7 +85,7 @@ $dd->startLoad();
 $tempsTraitement = $dd->endLoad($print, $style);
 ~~~
 
-### Barre de débuggage
+### Barre de débuggage:
 La barre de débuggage vous permet d'afficher des logs et des variables dans une pop up permettant de ne pas polluer votre page.
 
 #### Ajout de Log:
@@ -113,7 +117,12 @@ $dd->addDebugVar($var, $varName, $style);
 ~~~
 
 #### Affichage de la barre de débug:
-Fonction à exécuter juste avant la fermeture de la balise </body> de votre fichier
+Fonction à exécuter juste avant la fermeture de la balise *body* de votre fichier
 ~~~
 $dd->debugBarre();
 ~~~
+
+-----
+
+## Démo:
+(Démonstration de la Class)[https://deenne.fr]
