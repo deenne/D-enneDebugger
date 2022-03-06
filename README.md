@@ -23,10 +23,10 @@ L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonc
 * (string) [OPTIONNEL] $style :
 *       Correspond au style d'affichage de la variable.
 *       Options disponibles :
-*       - INFO (fond bleu)
-*       - VALID (fond vert)
-*       - ALERT (fond jaune)
-*       - ERROR (fond rouge)
+*           - INFO (fond bleu)
+*           - VALID (fond vert)
+*           - ALERT (fond jaune)
+*           - ERROR (fond rouge)
 * (bool) [OPTIONNEL] $return :
 *       Par défaut à false
 *       Si mis à true le contenu par défaut renvoyé dans un echo sera renvoyé avec un return
@@ -42,10 +42,7 @@ $dd->dump($variableAAfficher, $style, $return);
 * (string) [OPTIONNEL] $style :
 *       Correspond au style d'affichage de la variable.
 *       Options disponibles :
-*       - INFO (fond bleu)
-*       - VALID (fond vert)
-*       - ALERT (fond jaune)
-*       - ERROR (fond rouge)
+*           Similaire à dump()
 */
 $dd->dd($variableAAfficher, $style);
 ~~~
@@ -83,12 +80,13 @@ $dd->addDebugLog($log);
 ~~~
 /*
 * $var :
-*       Correspond à la variable à affichée
+*       Correspond à la variable à afficher
 * (string) $varName :
 *       Correspond au nom affiché de la variable
 * (string) [OPTIONNEL] $style :
-*       Correspond au style d'affichage de la variable. 
-*       Les options de style sont similaires à celles de la fonction dump()
+*       Correspond au style d'affichage de la variable.
+*       Options disponibles :
+*           Similaire à dump()
 */
 
 $dd->addDebugVar($var, $varName, $style);
