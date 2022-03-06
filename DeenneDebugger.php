@@ -128,7 +128,7 @@
 
             if ($print==false)
             {
-                return $this->pageLoad;
+                return round($this->pageLoad, 3);
             }
             else
             {
@@ -143,7 +143,7 @@
             }
         }
 
-        public function debugBarre()
+        public function debugBarre($showServerAndSession = true)
         {
             $this->debugBarLoadEnd = microtime(true);
             $this->debugBarLoad = $this->debugBarLoadEnd - $this->debugBarLoadStart;
@@ -245,9 +245,7 @@
                 <br>
 
                 <?php
-                    $this -> dump(
-                        $this->debugLogs
-                    )
+                    $this -> dump($this->debugLogs)
                 ?>
             </div>
 
@@ -350,7 +348,14 @@
                 <br>
 
                 <?php
-                    $this -> dump($_SESSION)
+                    if ($showServerAndSession == true) 
+                    {
+                        $this -> dump($_SESSION);
+                    }
+                    else 
+                    {
+                        $this -> dump("Variable masquée", "INFO");
+                    }
                 ?>
             </div>
             
@@ -373,7 +378,14 @@
                 <br>
 
                 <?php
-                    $this -> dump($_SERVER)
+                    if ($showServerAndSession == true)
+                    {
+                        $this -> dump($_SERVER);
+                    }
+                    else 
+                    {
+                        $this -> dump("Variable masquée", "INFO");
+                    }
                 ?>
             </div>
         </div>
@@ -649,6 +661,7 @@
     </div>
 
 <?php  
+        // Suite de la fonction debugBarre()
             $contents = ob_get_contents();
             ob_end_clean();
 
@@ -691,7 +704,7 @@
             $debugLoadEnd = microtime(true);
             $debugLoad = round($debugLoadEnd - $this->debugBarLoadStart, 3);
 
-            $this->debugLogs .= "\n\n".$debugLoad . "s : " . $log;
+            $this->debugLogs .= "\n\n<span style='font-weight: bold;'>".$debugLoad . "s :</span> " . $log;
         }
     }
 // FIN CLASS ?>
