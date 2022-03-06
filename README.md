@@ -36,3 +36,48 @@ Il est également possible d'ajouter un style prédéfini à l'affichage en l'aj
 $dd->dump($variableAAfficher, "INFO");
 $dd->dd($variableAAfficher, "ERROR");
 ~~~
+
+### Calcul du temps de traitement :
+Le calcul du temps de traitement nécéssite deux fonctions, la première doit être exécutée avant ce dont vous souhaitez obtenir le temps de traitement et la seconde après.
+~~~
+// Début du script / de la fonction:
+$dd->startLoad();
+
+// Script ou fonction dont on cherche à obtenir le temps de traitement
+
+// Fin du script / de la fonction:
+/*
+*
+*/
+
+$tempsTraitement = $dd->endLoad();
+~~~
+
+### Barre de débuggage
+La barre de débuggage vous permet d'afficher des logs et des variables dans une pop up permettant de ne pas polluer votre page.
+
+#### Ajout de Log:
+~~~
+/*
+* $log doit être une string
+*/
+
+$dd->addDebugLog($log);
+~~~
+
+#### Ajout de Variable:
+~~~
+/*
+* $var correspond à la variable à affiche
+* $varName doit être une string correspondant au nom affiché de la variable
+* (OPTIONNEL) $style doit être une string correspondant au style d'affichage de la variable. 
+*       Les options de style sont similaires à celles de la fonction dump()
+*/
+
+$dd->addDebugVar($var, $varName, $style);
+~~~
+
+#### Affichage de la barre de débug:
+~~~
+
+~~~
