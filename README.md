@@ -16,11 +16,16 @@ $dd = new DeenneDebugger();
 ### Affichage d'une variable:
 L'affichage de variables est inspiré de Symfony, pour cela nous avons deux fonctions.
 ~~~
-// Affichage de la variable
-$dd->dump($variableAAfficher);
+/*
+* AFFICHAGE DE LA VARIABLE
+* $variableAAfficher correspond à la variable à afficher
+* (string) $style correspondant au style d'affichage de la variable. 
+* (bool) $return 
+*/
+$dd->dump($variableAAfficher, $style, $return);
 
 // Affichage de la variable & arrêt du script
-$dd->dd($variableAAfficher);
+$dd->dd($variableAAfficher, $style);
 ~~~
 
 Il est également possible d'ajouter un style prédéfini à l'affichage en l'ajoutant à la fonction.
@@ -59,7 +64,8 @@ La barre de débuggage vous permet d'afficher des logs et des variables dans une
 #### Ajout de Log:
 ~~~
 /*
-* $log doit être une string
+* (string) $log :
+*       Correspond au log à ajouter
 */
 
 $dd->addDebugLog($log);
@@ -68,9 +74,12 @@ $dd->addDebugLog($log);
 #### Ajout de Variable:
 ~~~
 /*
-* $var correspond à la variable à affiche
-* $varName doit être une string correspondant au nom affiché de la variable
-* (OPTIONNEL) $style doit être une string correspondant au style d'affichage de la variable. 
+* $var :
+*       Correspond à la variable à affichée
+* (string) $varName :
+*       Correspond au nom affiché de la variable
+* (string) [OPTIONNEL] $style :
+*       Correspond au style d'affichage de la variable. 
 *       Les options de style sont similaires à celles de la fonction dump()
 */
 
